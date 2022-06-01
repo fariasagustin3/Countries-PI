@@ -1,10 +1,19 @@
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import Home from './components/Home';
+import CreateActivity from './components/CreateActivity';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Route exact path='/' component={ LandingPage } />
+        <Route path='/home' component={ Home } />
+        <Route path='/activities' component={ CreateActivity } />
+      </div>
+    </BrowserRouter>
   );
 }
 
