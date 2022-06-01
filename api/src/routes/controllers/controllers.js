@@ -67,27 +67,60 @@ const getCountryByCode = async (req, res, next) => {
 
 // POST /activities --> crea una nueva actividad
 const postActivity = async (req, res, next) => {
-	 const { name, difficulty, duration, season, countryID } = req.body;
-  if (name && difficulty && duration && season && countryID) {
-    var actividad = await Activity.create({
-      name,
-      difficulty,
-      season,
-      duration,
-    });
-    if (countryID.length === 1) {
-      if (actividad) {
-        return res.json(await actividad.addCountry(countryID));
-      }
+    try {
+		const { name, difficulty, duration, season, countries } = req.body;
+		if(name && difficulty && duration && season && countries) {
+			const newActivity = await Activity.create({
+				name,
+				difficulty,
+				duration,
+				season
+			});
+			countries.forEach(async (country) => {
+				const selectCountries = await Country.findOne({
+					where: {
+						name: country
+					}
+				});
+				await newActivity.addCountry(selectCountries)
+			})
+			res.send('Activity created')
+		} else {
+			res.status(404).send('error')
+		}
+		
+    } catch (error) {
+        console.log('Error postActivity en controller ' + error)
     }
-    if (countryID.length > 1) {
-      if (actividad) {
-        return res.json(await actividad.addCountries(countryID));
-      }
-    }
-  }
-  res.send({ error: "Faltan parametros" });
 };
+
+	// nos trae las actividades creadas
+  	const getActivity = async (req, res, next) => {
+	try {
+		const infoDb = await Activity.findAll({
+		  attribute: ["id"],
+		});
+		res.status(200).send(infoDb);
+		next()
+	  } catch (e) {
+		console.log(e);
+	  }
+	};
+
+// filter by continent
+// const getContinent = async (continent) => {
+//     try {
+//         let byContinent = await Country.findAll({
+//             where: {
+//                 continents: continent
+//             },
+//             include: [Activity]
+//         });
+//         return byContinent
+//     } catch (error) {
+//         console.log('Error en get continent en la funcion ' + error)
+//     }
+// };
 
 
 
@@ -96,5 +129,6 @@ module.exports = {
 	getCountries,
 	getCountryByName,
 	getCountryByCode,
-	postActivity
+	postActivity,
+	getActivity
 }
