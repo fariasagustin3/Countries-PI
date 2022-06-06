@@ -5,13 +5,16 @@ import {
   ORDER_BY_NAME,
   GET_ACTIVITIES,
   COUNTRY_BY_NAME,
-  POST_ACTIVITY
+  POST_ACTIVITY,
+  GET_DETAILS,
+  ORDER_BY_POPULATION
 } from "../actions/actionTypes";
 
 const initialState = {
   countries: [],
   allCountries: [],
-  activities: []
+  activities: [],
+  detail: [],
 }
 
 
@@ -40,34 +43,43 @@ function rootReducer(state = initialState, action) {
       }
     }
     case FILTER_BY_ACTIVITY: {
-      const allActivity = state.allCountries
-      const activityFiltered = action.payload === 'All' ? allActivity : allActivity.filter((e) => e.activities?.map(m => m.name).includes(action.payload))
+      const allActivities = [...state.allCountries]
+      const activitiesFiltered = action.payload === 'all' ? allActivities : allActivities.filter((e) => e.activities && e.activities.map((c) => c.name).includes(action.payload))
       return {
         ...state,
-        countries: activityFiltered 
+        countries: activitiesFiltered
       }
     }
     case ORDER_BY_NAME: {
-      let orderedByName = action.payload === 'asc' ? state.countries.sort(function(a, b) {
+      let orderedCountries = [...state.countries]
+      orderedCountries = orderedCountries.sort(function(a, b) {
+        if(a.name < b.name) {
+          return action.payload === 'des' ? -1 : 1;
+        }
         if(a.name > b.name) {
-          return 1
+          return action.payload === 'asc' ? -1 : 1;
         }
-        if(b.name > a.name) {
-          return -1
+        return 0;
+      })
+      return {
+        ...state,
+        countries: orderedCountries
+      }
+    }
+    case ORDER_BY_POPULATION: {
+      let orderedByPopulation = [...state.countries]
+      orderedByPopulation = orderedByPopulation.sort(function(a, b) {
+        if(a.population < b.population) {
+          return action.payload === 'low' ? -1 : 1
         }
-        return 0
-      }) : state.countries.sort(function(a, b) {
-        if(a.name > b.name) {
-          return -1
-        }
-        if(b.name > a.name) {
-          return 1
+        if(a.population > b.population) {
+          return action.payload === 'high' ? -1 : 1
         }
         return 0
       })
       return {
         ...state,
-        countries: orderedByName
+        countries: orderedByPopulation
       }
     }
     case COUNTRY_BY_NAME: {
@@ -79,6 +91,12 @@ function rootReducer(state = initialState, action) {
     case POST_ACTIVITY: {
       return {
         ...state
+      }
+    }
+    case GET_DETAILS: {
+      return {
+        ...state,
+        detail: action.payload
       }
     }
     default: return state;
