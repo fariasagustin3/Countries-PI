@@ -34,7 +34,7 @@ const getCountryByName = async (req, res, next) => {
     const country = await Country.findAll({
       where: {
         name: {
-            		[Op.iLike] : `%${name}%`
+            	[Op.iLike] : `%${name}%`
               }
             },
             include: [Activity]
@@ -49,7 +49,9 @@ const getCountryByName = async (req, res, next) => {
 // GET /countries ---> Busca países de la DB y las envía
 const getCountries = async (req, res, next) => {
 	try {
-		let DBcountries = await Country.findAll()
+		let DBcountries = await Country.findAll({
+			include:[Activity]
+		})
 		res.send(DBcountries);
 		next()
 	} catch(e) {
