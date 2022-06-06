@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { countryByName } from '../actions/index';
+import './styles/SearchBar.css';
 
-function SearchBar() {
+function SearchBar({ setCurrentPage }) {
 	const dispatch = useDispatch();
 	const [name, setName] = useState('');
 	
@@ -14,13 +15,14 @@ function SearchBar() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(countryByName(name))
+		setCurrentPage(1);
+		setName('')
 	}
 
 	return(
-		<div>
-			<label>Country: </label>
-			<input type='text' placeholder='e.g. Argentina...' onChange={(e) => handleInputChange(e)} />
-			<button type='submit' onClick={(e) => handleSubmit(e)}> Search </button>
+		<div className='search-bar-container'>
+			<input className='search-bar-input' type='text' placeholder='e.g. Argentina...' onChange={(e) => handleInputChange(e)} />
+			<button className='search-bar-submit' type='submit' onClick={(e) => handleSubmit(e)}> Search </button>
 		</div>
 	)
 
