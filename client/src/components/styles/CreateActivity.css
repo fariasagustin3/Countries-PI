@@ -1,0 +1,151 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    margin: 15px;
+}
+
+.input-name-form {
+    border: 0;
+    width: 220px;
+    margin: 15px;
+    height: 30px;
+    background: transparent;
+    color: white;
+    outline: none;
+    border-bottom: 1px solid white;
+}
+
+.input-name-form:focus {
+    outline: none;
+}
+
+
+.input-select-form {
+    border: 1px solid black;
+    width: 224px;
+    margin: 15px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.error-select-form {
+    border: 1px solid red;
+    width: 224px;
+    margin: 10px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.container-countries {
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(2, 38, 77, 0.5);
+    padding-right: 50px;
+    padding-left: 20px;
+}
+
+.container-list {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.list-items {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: flex-start;
+}
+
+.close-btn {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #02264d;
+    color: #8f0505;
+    border-radius: .25rem;
+    margin-right: 10px;
+}
+
+.close-btn:hover, .close-btn:active, .close-btn:focus {
+    color: #fff;
+    background-color: #8f0505;
+}
+
+.submit-form-btn {
+    padding: .375rem .75rem;
+    border: 1px solid #02264d;
+    border-radius: .25rem;
+    color: #02264d;
+    transition: color .15s ease-in-out;
+    background-color: .15s ease-in-out;
+  }
+  
+.submit-form-btn:hover, .submit-form-btn:active, .submit-form-btn:focus {
+    color: #fff;
+    background-color: #02264d;
+  }
+
+.form-title {
+    color: rgba(255, 255, 255, 0.911);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.error-input-form {
+    border: 0;
+    width: 220px;
+    margin: 10px;
+    height: 30px;
+    background: transparent;
+    color: red;
+    outline: none;
+    border-bottom: 1px solid red;
+}
+
+.error {
+    color: red;
+    font-size: 11px;
+}
+
+.countries-list {
+    color: white;
+    list-style: none;
+}
+
+.home-btn-form {
+    padding: .375rem .75rem;
+    border: 1px solid #02264d;
+    border-radius: .25rem;
+    color: #02264d;
+    transition: color .15s ease-in-out;
+    background-color: .15s ease-in-out;
+}
+      
+.home-btn-form:hover, .home-btn-form:active, .home-btn-form:focus {
+    color: #fff;
+    background-color: #02264d;
+}
+
+.container-items {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.selected-countries-h1 {
+    display: flex;
+    justify-content: center;
+}

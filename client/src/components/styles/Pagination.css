@@ -1,0 +1,19 @@
+.pagination-btn {
+    margin: 7px;
+    border: 2px solid #02264d;
+    text-decoration: none;
+    background-color: #fff;
+    color: #02264d;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.pagination-btn:hover, .pagination-btn:active, .pagination-btn:focus {
+    background-color: #02264d;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

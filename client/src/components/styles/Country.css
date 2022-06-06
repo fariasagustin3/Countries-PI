@@ -1,0 +1,26 @@
+.container {
+    margin: 40px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    /* border: 1px solid white; */
+}
+
+.country-container {
+    box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    background-color: rgba(2, 38, 77, 0.5);
+    border-radius: 15px;
+}
+
+.country-name {
+    display: block;
+    margin: 10px;
+    color: bisque;
+}
+
+.continent {
+    display: block;
+    margin: 10px;
+    color: white;
+}

@@ -1,0 +1,106 @@
+.div-country-detail-container {
+    border: 3px solid white;
+    border-radius: 15px;
+    margin: 15px;
+    margin-left: 367px;
+    box-shadow: -16px 11px 1px rgba(0, 0, 0, 0.8);
+    width: 600px;
+    background-color: rgba(2, 38, 77, 0.5)
+}
+
+.data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+.label {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    font-size: 16px;
+    margin: 5px;
+    align-items: center;
+}
+
+.detail-home-btn {
+    margin: 20px;
+    border: 1px solid rgb(2, 38, 77);
+    border-radius: .25rem;    
+    width: 200px;
+    transition: .15s ease-in-out;
+    height: 37px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    background-color: rgba(255, 255, 255, 0.911);
+    color: rgba(0, 0, 0, 0.815);
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.hr {
+    color: white;
+    width: 500px;
+}
+
+.activities-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    color: rgb(45, 113, 214);
+}
+
+.country-error {
+    display: flex;
+    justify-content: center;
+    color: rgb(175, 57, 57);
+    margin: 10px;
+}
+
+.detail-home-btn:hover, .detail-home-btn:active, .detail-home-btn:focus {
+    color: #fff;
+    background-color: #02264d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+}
+
+.detail-create-activity-btn {
+    margin: 20px;
+    border: 1px solid #02264d;
+    border-radius: .25rem;    
+    margin: 15px;
+    transition: color .15s ease-in-out;
+    width: 200px;
+    height: 37px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    background-color: .15s ease-in-out;
+    color: rgba(0, 0, 0, 0.815);
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.detail-create-activity-btn:hover, .detail-create-activity-btn:active, .detail-create-activity-btn:focus {
+    color: #fff;
+    background-color: #02264d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+}
+
+.name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.label-container {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(0, 0, 0, 0.815);
+    font-size: 16px;
+    margin: 5px;
+    align-items: center;
+    flex-direction: column;
+}
