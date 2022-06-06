@@ -3,7 +3,7 @@ const router = Router();
 const morgan = require('morgan');
 const countries = require('./countries');
 const activities = require('./activities');
-const filters = require('./filters');
+// const filters = require('./filters');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
