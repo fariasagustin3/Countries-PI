@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetails } from '../actions/index';
+import { getDetails, cleanDetails } from '../actions/index';
 import './styles/Detail.css'; 
 
 function Detail(props) {
@@ -10,6 +10,7 @@ function Detail(props) {
   useEffect(() => {
     console.log(props);
     dispatch(getDetails(props.match.params.id))
+    return () => dispatch(cleanDetails())
   }, [dispatch])
 
   const country = useSelector(state => state.detail)

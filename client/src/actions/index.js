@@ -8,7 +8,8 @@ import {
   COUNTRY_BY_NAME,
   POST_ACTIVITY,
   GET_DETAILS,
-  ORDER_BY_POPULATION
+  ORDER_BY_POPULATION,
+  CLEAN_DETAILS
 } from './actionTypes';
 
 export function getAllCountries() {
@@ -28,6 +29,13 @@ export function filterByContinent(payload) {
 export function filterByActivity(payload) {
   return {
     type: FILTER_BY_ACTIVITY,
+    payload
+  }
+}
+
+export function cleanDetails(payload) {
+  return {
+    type: CLEAN_DETAILS,
     payload
   }
 }

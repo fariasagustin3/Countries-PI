@@ -103,8 +103,9 @@ function Home() {
             pagination={pagination}
           />
           <div className='all-countries-container'>
-          {currentCountries &&
-            currentCountries.map((c) => (
+          {currentCountries.length === 0 
+          ? "Countries not found"
+          : currentCountries.map((c) => (
               <Country
                 key={c.id}
                 id={c.id}

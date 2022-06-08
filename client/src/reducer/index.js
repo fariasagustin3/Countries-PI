@@ -7,7 +7,8 @@ import {
   COUNTRY_BY_NAME,
   POST_ACTIVITY,
   GET_DETAILS,
-  ORDER_BY_POPULATION
+  ORDER_BY_POPULATION,
+  CLEAN_DETAILS
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -32,6 +33,12 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         activities: action.payload
+      }
+    }
+    case CLEAN_DETAILS: {
+      return {
+        ...state,
+        detail: []
       }
     }
     case FILTER_BY_CONTINENT: {
