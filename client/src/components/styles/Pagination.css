@@ -1,19 +1,20 @@
 .pagination-btn {
-    margin: 7px;
-    border: 2px solid #02264d;
+    margin: 5px;
+    border: 1px solid #ffffff;
     text-decoration: none;
-    background-color: #fff;
-    color: #02264d;
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
+    background-color: transparent;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .pagination-btn:hover, .pagination-btn:active, .pagination-btn:focus {
-    background-color: #02264d;
+    background-color: #02264df3;
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

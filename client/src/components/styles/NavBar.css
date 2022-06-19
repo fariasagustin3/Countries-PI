@@ -1,0 +1,70 @@
+.container-nav {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(3, 0, 29);
+    height: 130px;
+}
+
+.create-activity-btn {
+    border: none;
+    font-size: 5px;
+    margin: 15px;
+    width: 150px;
+    height: 37px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.create-activity-btn:hover, .create-activity-btn:active, .create-activity-btn:focus {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.reload-countries-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25rem;
+    border: 2px solid #02264d;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    background-color: rgba(255, 255, 255, 0.911);
+    color: #02264d;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.reload-countries-btn:hover, .reload-countries-btn:active, .reload-countries-btn:focus {
+    background-color: #02264d;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.select {
+    margin-top: 2px;
+    border: none;
+    display: flex;
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.034);
+    color: #fff;
+    font-size: 15px;
+}

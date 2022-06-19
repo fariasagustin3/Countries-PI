@@ -20,10 +20,10 @@ function SearchBar({ setCurrentPage }) {
 	}
 
 	return(
-		<div className='search-bar-container'>
-			<input className='search-bar-input' type='text' placeholder='e.g. Argentina...' onChange={(e) => handleInputChange(e)} />
-			<button className='search-bar-submit' type='submit' onClick={(e) => handleSubmit(e)}> Search </button>
-		</div>
+		<div class="search-box">
+    	<button onClick={(e) => handleSubmit(e)} className="btn-search"><i className="fas fa-search"></i>🔎</button>
+    	<input onChange={(e) => handleInputChange(e)} type="text" className="input-search" placeholder="Type to Search..." />
+  		</div>
 	)
 
 }
